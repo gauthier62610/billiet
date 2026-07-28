@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Logo Billiet Menuiserie — PLACEHOLDER
+  Motif : cernes d'arbre / grain de bois avec la lettre B centrale.
+  >>> REMPLACER par le logo officiel du client quand il sera fourni. <<<
+  Conserver de préférence un format vectoriel (SVG) pour la netteté.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Billiet Menuiserie">
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#3D5A3D" stroke-width="3"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#4A6B4A" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="66" fill="none" stroke="#3D5A3D" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="52" fill="none" stroke="#4A6B4A" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="38" fill="none" stroke="#3D5A3D" stroke-width="2.5"/>
+  <text x="100" y="100" text-anchor="middle" dominant-baseline="central"
+        font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700"
+        fill="#3D5A3D">B</text>
+</svg>

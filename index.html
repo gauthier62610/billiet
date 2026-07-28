@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billiet Menuiserie — L'innovation au service de la tradition</title>
+  <meta name="description" content="Billiet Menuiserie, entreprise de menuiserie française forte de 30 ans d'expérience. Fenêtres, portes, volets, vérandas. L'innovation au service de la tradition.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Polices : titres élégants et espacés + corps lisible.
+       Repli système assuré dans le CSS si les polices ne se chargent pas. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================= HEADER (commun) =======================
+       Identique sur les 5 pages. Si vous le modifiez, reportez le
+       changement sur chaque page HTML. -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Accueil — Billiet Menuiserie">
+        <!-- REMPLACER assets/logo.svg par le logo officiel -->
+        <img src="assets/logo.svg" alt="Logo Billiet Menuiserie">
+        <span class="brand__name">Billiet<span>Menuiserie</span></span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span></span>
+      </button>
+
+      <nav class="nav" id="menu">
+        <a href="index.html">La Menuiserie</a>
+        <a href="realisations.html">Nos Réalisations</a>
+        <a href="produits.html">Nos Produits</a>
+        <a href="metiers.html">Nos Métiers</a>
+        <a href="contact.html">Nous Contacter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================= HERO ======================= -->
+    <section class="hero">
+      <div class="container">
+        <!-- REMPLACER assets/logo.svg par le logo officiel -->
+        <img class="hero__logo" src="assets/logo.svg" alt="Logo Billiet Menuiserie">
+        <h1>Billiet Menuiserie</h1>
+        <p class="hero__baseline">« L'innovation au service de la tradition »</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="realisations.html">Nos réalisations</a>
+          <a class="btn btn--ghost" href="contact.html">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ TEXTE OFFICIEL (NE PAS MODIFIER) ================ -->
+    <section class="section">
+      <div class="container">
+        <div class="official">
+          <p class="official__title">BILLIET MENUISERIE.</p>
+          <p class="official__subtitle">Depuis toujours... et pour longtemps</p>
+          <p class="official__body">
+            Depuis 30 ans, Billiet Menuiserie associe les technologies les plus récentes
+            et l'engagement humain de toutes ses équipes. Partenaire de ceux qui construisent
+            l'avenir, Billiet Menuiserie développe des produits de pointe et mène une démarche
+            globale qui associe la haute performance énergétique et la préservation de
+            l'environnement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ APERÇU PRODUITS ================ -->
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Notre savoir-faire</span>
+          <h2>Nos produits</h2>
+          <hr class="rule">
+        </div>
+
+        <div class="grid grid--3">
+          <!-- Carte produit — REMPLACER l'image quand disponible -->
+          <article class="card">
+            <div class="img-placeholder">Photo — Fenêtres</div>
+            <div class="card__body">
+              <h3>Fenêtres</h3>
+              <p>Bois, PVC, aluminium : haute performance énergétique et esthétique soignée.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img-placeholder">Photo — Portes</div>
+            <div class="card__body">
+              <h3>Portes</h3>
+              <p>Portes d'entrée et intérieures sur mesure, alliant sécurité et caractère.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img-placeholder">Photo — Volets</div>
+            <div class="card__body">
+              <h3>Volets</h3>
+              <p>Volets battants et roulants pour le confort, l'isolation et la sérénité.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center" style="margin-top:40px;">
+          <a class="btn btn--ghost" href="produits.html">Voir toutes nos gammes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================ CHIFFRES CLÉS ================ -->
+    <section class="section section--forest">
+      <div class="container">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__num">30 ans</div>
+            <div class="stat__label">d'expérience</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">100 %</div>
+            <div class="stat__label">sur mesure</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Éco</div>
+            <div class="stat__label">démarche responsable</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER (commun) ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/logo.svg" alt="Logo Billiet Menuiserie">
+            <strong>Billiet Menuiserie</strong>
+          </div>
+          <p class="footer-baseline">« L'innovation au service de la tradition »</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">La Menuiserie</a></li>
+            <li><a href="realisations.html">Nos Réalisations</a></li>
+            <li><a href="produits.html">Nos Produits</a></li>
+            <li><a href="metiers.html">Nos Métiers</a></li>
+            <li><a href="contact.html">Nous Contacter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Coordonnées</h4>
+          <!-- REMPLACER par les vraies coordonnées du client -->
+          <ul>
+            <li>Adresse à renseigner</li>
+            <li><a href="tel:+33000000000">00 00 00 00 00</a></li>
+            <li><a href="mailto:contact@billiet-menuiserie.fr">contact@billiet-menuiserie.fr</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year">2026</span> Billiet Menuiserie — Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

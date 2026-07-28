@@ -1,0 +1,439 @@
+/* ============================================================================
+   BILLIET MENUISERIE — Feuille de style principale
+   Charte : bois / cernes d'arbre. Vert forêt profond + verts sauge,
+   fond crème, texte anthracite. Design épuré, contrastes forts, lisibilité.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   1. VARIABLES (couleurs, typographie, espacements)
+   --------------------------------------------------------------------------- */
+:root {
+  /* Palette officielle */
+  --forest:        #3D5A3D;   /* vert forêt profond */
+  --forest-2:      #4A6B4A;   /* vert forêt secondaire */
+  --sage:          #7C946F;   /* vert sauge */
+  --sage-light:    #A9BE9E;   /* sauge clair */
+  --cream:         #F7F4EC;   /* fond blanc cassé / crème */
+  --cream-2:       #EFEADE;   /* crème un peu plus soutenu */
+  --white:         #FFFFFF;
+  --anthracite:    #2C2E2C;   /* texte principal */
+  --anthracite-2:  #555854;   /* texte secondaire */
+  --line:          #DAD3C4;   /* filets / séparateurs */
+
+  /* Typographie */
+  --font-title: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:  'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* Mise en page */
+  --maxw: 1200px;
+  --header-h: 78px;
+  --radius: 6px;
+  --shadow: 0 6px 24px rgba(44, 46, 44, 0.08);
+  --shadow-hover: 0 12px 34px rgba(44, 46, 44, 0.14);
+  --transition: 0.25s ease;
+}
+
+/* ---------------------------------------------------------------------------
+   2. BASE / RESET LÉGER
+   --------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--anthracite);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--forest); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--forest-2); }
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  color: var(--forest);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: clamp(1.9rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+h3 { font-size: 1.15rem; letter-spacing: 0.08em; }
+
+p { margin: 0 0 1.1em; }
+
+/* ---------------------------------------------------------------------------
+   3. UTILITAIRES DE MISE EN PAGE
+   --------------------------------------------------------------------------- */
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+.section { padding: 84px 0; }
+.section--tint { background: var(--cream-2); }
+.section--forest { background: var(--forest); color: var(--cream); }
+.section--forest h2, .section--forest h3 { color: var(--white); }
+
+.section-head { text-align: center; max-width: 720px; margin: 0 auto 54px; }
+.section-head .eyebrow {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 14px;
+}
+.section-head p { color: var(--anthracite-2); }
+
+/* Trait décoratif rappelant un cerne / grain de bois */
+.rule { width: 64px; height: 3px; background: var(--sage); border: 0; margin: 18px auto 0; }
+
+.text-center { text-align: center; }
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: 2px solid var(--forest);
+  transition: all var(--transition);
+}
+.btn--primary { background: var(--forest); color: var(--cream); }
+.btn--primary:hover { background: var(--forest-2); border-color: var(--forest-2); color: var(--white); }
+.btn--ghost { background: transparent; color: var(--forest); }
+.btn--ghost:hover { background: var(--forest); color: var(--cream); }
+.section--forest .btn--ghost { color: var(--cream); border-color: var(--cream); }
+.section--forest .btn--ghost:hover { background: var(--cream); color: var(--forest); }
+
+/* ---------------------------------------------------------------------------
+   4. EMPLACEMENTS IMAGES (placeholders)
+   >>> Chaque .img-placeholder est une zone à remplacer par une vraie photo.
+       Voir le commentaire HTML au-dessus de chaque bloc dans les pages.
+   --------------------------------------------------------------------------- */
+.img-placeholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    repeating-linear-gradient(45deg, var(--cream-2), var(--cream-2) 14px, var(--cream) 14px, var(--cream) 28px);
+  color: var(--sage);
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px dashed var(--sage-light);
+  border-radius: var(--radius);
+  min-height: 220px;
+  padding: 16px;
+}
+.img-placeholder::before { content: "▣  "; }
+
+/* ---------------------------------------------------------------------------
+   5. HEADER + NAVIGATION (sticky)
+   --------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  background: rgba(247, 244, 236, 0.95);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand img { width: 46px; height: 46px; }
+.brand__name {
+  font-family: var(--font-title);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--forest);
+  font-size: 1.02rem;
+  line-height: 1.1;
+}
+.brand__name span { display: block; font-size: 0.62rem; letter-spacing: 0.22em; color: var(--sage); font-weight: 600; }
+
+.nav { display: flex; align-items: center; gap: 30px; }
+.nav a {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--anthracite);
+  padding: 6px 0;
+  position: relative;
+}
+.nav a::after {
+  content: "";
+  position: absolute; left: 0; bottom: -2px;
+  width: 0; height: 2px; background: var(--forest);
+  transition: width var(--transition);
+}
+.nav a:hover::after, .nav a.is-active::after { width: 100%; }
+.nav a.is-active { color: var(--forest); }
+
+/* Bouton hamburger (mobile) */
+.nav-toggle {
+  display: none;
+  background: none; border: 0; cursor: pointer;
+  width: 42px; height: 42px; padding: 8px;
+}
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
+  content: ""; display: block; height: 2px; width: 24px;
+  background: var(--forest); transition: all var(--transition);
+}
+.nav-toggle span::before { transform: translateY(-7px); }
+.nav-toggle span::after  { transform: translateY(5px); }
+.nav-toggle[aria-expanded="true"] span { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after  { transform: rotate(-45deg); }
+
+/* ---------------------------------------------------------------------------
+   6. HERO (page d'accueil)
+   --------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 96px 0 88px;
+  background: var(--cream);
+  overflow: hidden;
+}
+/* Filigrane de cernes concentriques en fond, très discret */
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 50% 42%,
+    transparent 0, transparent 60px,
+    rgba(124, 148, 111, 0.10) 60px, rgba(124, 148, 111, 0.10) 62px,
+    transparent 62px, transparent 120px,
+    rgba(124, 148, 111, 0.10) 120px, rgba(124, 148, 111, 0.10) 122px,
+    transparent 122px, transparent 180px,
+    rgba(124, 148, 111, 0.10) 180px, rgba(124, 148, 111, 0.10) 182px,
+    transparent 182px, transparent 240px,
+    rgba(124, 148, 111, 0.08) 240px, rgba(124, 148, 111, 0.08) 242px,
+    transparent 242px);
+  pointer-events: none;
+}
+.hero > .container { position: relative; z-index: 1; }
+.hero__logo { width: 120px; height: 120px; margin: 0 auto 26px; }
+.hero__baseline {
+  font-family: var(--font-title);
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  color: var(--sage);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  margin-bottom: 30px;
+}
+.hero__actions { margin-top: 34px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* Bloc « texte officiel » */
+.official {
+  max-width: 760px; margin: 0 auto; text-align: center;
+}
+.official__title {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--forest);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  margin-bottom: 8px;
+}
+.official__subtitle {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--sage);
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+}
+.official__body { font-size: 1.12rem; color: var(--anthracite); line-height: 1.85; }
+
+/* ---------------------------------------------------------------------------
+   7. BANDEAU DE PAGE (pages intérieures)
+   --------------------------------------------------------------------------- */
+.page-banner {
+  background: var(--forest);
+  color: var(--cream);
+  text-align: center;
+  padding: 62px 0;
+}
+.page-banner h1 { color: var(--white); margin-bottom: 8px; }
+.page-banner p { color: var(--sage-light); margin: 0; letter-spacing: 0.02em; }
+
+/* ---------------------------------------------------------------------------
+   8. GRILLES : réalisations (galerie) + produits + métiers
+   --------------------------------------------------------------------------- */
+.grid { display: grid; gap: 26px; }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+/* Galerie réalisations */
+.gallery-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.gallery-item .img-placeholder { min-height: 240px; border: 0; border-radius: 0; }
+.gallery-item figcaption {
+  padding: 16px 18px;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: var(--forest);
+}
+.gallery-item figcaption small {
+  display: block; text-transform: none; letter-spacing: 0;
+  font-family: var(--font-body); color: var(--anthracite-2); font-size: 0.85rem; margin-top: 4px;
+}
+
+/* Cartes produits */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex; flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.card .img-placeholder { min-height: 200px; border: 0; border-radius: 0; }
+.card__body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.card__body h3 { margin-bottom: 10px; }
+.card__body p { color: var(--anthracite-2); font-size: 0.98rem; }
+
+/* Métiers */
+.metier { display: grid; grid-template-columns: 1fr 1fr; gap: 46px; align-items: center; }
+.metier:not(:last-child) { margin-bottom: 72px; }
+.metier--reverse .metier__media { order: 2; }
+.metier__media .img-placeholder { min-height: 320px; }
+.metier__text h2 { text-align: left; }
+.metier__text .rule { margin: 0 0 22px; }
+.metier__text p { color: var(--anthracite-2); }
+
+/* Petites statistiques (métiers / accueil) */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; text-align: center; }
+.stat__num {
+  font-family: var(--font-title); font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem); color: var(--white); letter-spacing: 0.04em;
+}
+.stat__label { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.78rem; color: var(--sage-light); }
+
+/* ---------------------------------------------------------------------------
+   9. PAGE CONTACT (formulaire + infos + carte)
+   --------------------------------------------------------------------------- */
+.contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 46px; }
+
+.form-field { margin-bottom: 20px; }
+.form-field label {
+  display: block; font-family: var(--font-title); text-transform: uppercase;
+  letter-spacing: 0.1em; font-size: 0.76rem; color: var(--forest); margin-bottom: 8px; font-weight: 600;
+}
+.form-field input, .form-field textarea {
+  width: 100%; padding: 13px 15px;
+  font-family: var(--font-body); font-size: 1rem; color: var(--anthracite);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.form-field input:focus, .form-field textarea:focus {
+  outline: none; border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(124, 148, 111, 0.18);
+}
+.form-field textarea { resize: vertical; min-height: 140px; }
+.form-note { font-size: 0.85rem; color: var(--anthracite-2); }
+.form-success {
+  display: none; margin-top: 16px; padding: 14px 18px;
+  background: rgba(124, 148, 111, 0.14); border: 1px solid var(--sage-light);
+  border-radius: var(--radius); color: var(--forest); font-weight: 600;
+}
+.form-success.is-visible { display: block; }
+
+.contact-info { }
+.contact-info .info-block { margin-bottom: 26px; }
+.contact-info h3 { color: var(--forest); margin-bottom: 8px; }
+.contact-info p { color: var(--anthracite-2); margin: 0; }
+.map-placeholder { min-height: 260px; margin-top: 8px; }
+
+/* ---------------------------------------------------------------------------
+   10. FOOTER
+   --------------------------------------------------------------------------- */
+.site-footer { background: var(--anthracite); color: var(--cream); padding: 56px 0 26px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+.site-footer h4 {
+  font-family: var(--font-title); text-transform: uppercase; letter-spacing: 0.14em;
+  font-size: 0.85rem; color: var(--sage-light); margin: 0 0 16px;
+}
+.site-footer p, .site-footer li { color: #C9CBC6; font-size: 0.95rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li { margin-bottom: 8px; }
+.site-footer a { color: #C9CBC6; }
+.site-footer a:hover { color: var(--white); }
+.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.footer-brand img { width: 42px; height: 42px; }
+.footer-brand strong { font-family: var(--font-title); letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
+.footer-baseline { font-style: italic; color: var(--sage-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12); margin-top: 34px; padding-top: 20px;
+  text-align: center; font-size: 0.85rem; color: #9DA09A;
+}
+
+/* ---------------------------------------------------------------------------
+   11. RESPONSIVE
+   --------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .metier, .metier--reverse .metier__media { grid-template-columns: 1fr; order: 0; }
+  .metier__media { margin-bottom: 8px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  .section { padding: 60px 0; }
+
+  /* Navigation mobile : menu déroulant plein largeur */
+  .nav-toggle { display: block; }
+  .nav {
+    position: absolute; top: var(--header-h); left: 0; right: 0;
+    flex-direction: column; gap: 0; align-items: stretch;
+    background: var(--cream); border-bottom: 1px solid var(--line);
+    max-height: 0; overflow: hidden; transition: max-height var(--transition);
+    box-shadow: var(--shadow);
+  }
+  .nav.is-open { max-height: 420px; }
+  .nav a { padding: 16px 24px; border-top: 1px solid var(--line); }
+  .nav a::after { display: none; }
+
+  .grid--3, .grid--2 { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; gap: 30px; }
+  .footer-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Réalisations — Billiet Menuiserie</title>
+  <meta name="description" content="Découvrez les réalisations de Billiet Menuiserie : fenêtres, portes, volets et vérandas posés avec soin partout en France.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================= HEADER (commun) ======================= -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Accueil — Billiet Menuiserie">
+        <img src="assets/logo.svg" alt="Logo Billiet Menuiserie">
+        <span class="brand__name">Billiet<span>Menuiserie</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span></span>
+      </button>
+      <nav class="nav" id="menu">
+        <a href="index.html">La Menuiserie</a>
+        <a href="realisations.html">Nos Réalisations</a>
+        <a href="produits.html">Nos Produits</a>
+        <a href="metiers.html">Nos Métiers</a>
+        <a href="contact.html">Nous Contacter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================= BANDEAU DE PAGE ======================= -->
+    <section class="page-banner">
+      <div class="container">
+        <h1>Nos Réalisations</h1>
+        <p>Un aperçu de nos chantiers et de notre exigence du détail</p>
+      </div>
+    </section>
+
+    <!-- ======================= GALERIE ======================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Portfolio</span>
+          <h2>Quelques projets</h2>
+          <hr class="rule">
+          <p>Les photos ci-dessous sont des emplacements réservés. Le client ajoutera
+             progressivement ses propres réalisations.</p>
+        </div>
+
+        <!-- GALERIE — REMPLACER chaque .img-placeholder par une vraie photo :
+             <img src="assets/images/realisation-01.jpg" alt="Description">
+             Adaptez le texte de <figcaption> à chaque projet. -->
+        <div class="grid grid--3">
+
+          <figure class="gallery-item">
+            <div class="img-placeholder">Réalisation 01</div>
+            <figcaption>Fenêtres bois-alu<small>Rénovation d'une maison de caractère</small></figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <div class="img-placeholder">Réalisation 02</div>
+            <figcaption>Porte d'entrée sur mesure<small>Aluminium, design contemporain</small></figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <div class="img-placeholder">Réalisation 03</div>
+            <figcaption>Véranda<small>Extension lumineuse à haute isolation</small></figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <div class="img-placeholder">Réalisation 04</div>
+            <figcaption>Volets battants<small>Bois massif, teinte naturelle</small></figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <div class="img-placeholder">Réalisation 05</div>
+            <figcaption>Baie coulissante<small>Grandes ouvertures sur jardin</small></figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <div class="img-placeholder">Réalisation 06</div>
+            <figcaption>Portail &amp; clôture<small>Ensemble assorti à la façade</small></figcaption>
+          </figure>
+
+        </div>
+
+        <div class="text-center" style="margin-top:44px;">
+          <a class="btn btn--primary" href="contact.html">Discuter de votre projet</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER (commun) ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/logo.svg" alt="Logo Billiet Menuiserie">
+            <strong>Billiet Menuiserie</strong>
+          </div>
+          <p class="footer-baseline">« L'innovation au service de la tradition »</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">La Menuiserie</a></li>
+            <li><a href="realisations.html">Nos Réalisations</a></li>
+            <li><a href="produits.html">Nos Produits</a></li>
+            <li><a href="metiers.html">Nos Métiers</a></li>
+            <li><a href="contact.html">Nous Contacter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Coordonnées</h4>
+          <ul>
+            <li>Adresse à renseigner</li>
+            <li><a href="tel:+33000000000">00 00 00 00 00</a></li>
+            <li><a href="mailto:contact@billiet-menuiserie.fr">contact@billiet-menuiserie.fr</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year">2026</span> Billiet Menuiserie — Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
