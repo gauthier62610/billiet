@@ -27,8 +27,9 @@ metiers.html        # Nos Métiers (savoir-faire + équipes)
 contact.html        # Nous Contacter (formulaire + coordonnées + carte)
 css/style.css       # Charte graphique complète (variables, composants, responsive)
 js/main.js          # Menu mobile, lien actif, formulaire de contact
-assets/logo.svg     # Logo PLACEHOLDER (à remplacer par le logo officiel)
-assets/images/      # Photos du client (réalisations, personnel, produits)
+assets/logo-mark.png    # Logo officiel — médaillon rond (header, footer, favicon)
+assets/logo-billiet.jpg # Logo officiel complet (médaillon + nom + baseline)
+assets/images/          # Photos du client (réalisations, personnel, produits)
 ```
 
 ## Comment remplacer les images
@@ -49,7 +50,8 @@ Renseignez toujours l'attribut `alt` (accessibilité + référencement).
 
 ## À faire évoluer
 
-- Remplacer le logo (`assets/logo.svg`) et les photos placeholder.
+- Remplacer les photos placeholder par les vraies réalisations (le logo officiel
+  est déjà intégré : `assets/logo-mark.png` et `assets/logo-billiet.jpg`).
 - Intégrer une vraie carte sur `contact.html` (iframe Google Maps — exemple en
   commentaire dans le fichier).
 - Connecter le formulaire de contact à un service d'email / backend
