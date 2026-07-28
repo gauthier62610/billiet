@@ -219,7 +219,8 @@ p { margin: 0 0 1.1em; }
   position: relative;
   text-align: center;
   padding: 88px 0 84px;
-  background: var(--cream);
+  /* Fond blanc pour fondre le fond blanc du logo officiel (raccord invisible) */
+  background: var(--white);
   overflow: hidden;
 }
 .hero > .container { position: relative; z-index: 1; }
